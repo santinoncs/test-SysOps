@@ -1,0 +1,18 @@
+Steps:
+
+1. First create an ami from the instance.  ( Removing the /opt/test first )
+2. Launch an instance from this ami and set the user-data necessary to clone the repo
+
+
+```
+#!/bin/bash
+
+apt-get update -qq
+cd /opt
+mkdir test
+cd test
+git clone https://bitbucket.org/Marfeel/appserverpythontestapp.git .
+chown -R www-data:www-data /opt/test/
+systemctl restart python-app.service
+systemctl restart nginx
+```
