@@ -1,8 +1,0 @@
-ubuntu@ip-172-31-41-22:~$ cat ~/.aws/config 
-[default]
-region = eu-west-1
-ubuntu@ip-172-31-41-22:~$ cat ~/.aws/credentials 
-[default]
-aws_access_key_id = AKIAITQTWHBW3TO7ASEQ
-aws_secret_access_key = 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
-ubuntu@ip-172-31-41-22:~$ 

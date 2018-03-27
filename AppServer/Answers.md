@@ -33,7 +33,3 @@ root@ip-172-31-40-120:~#
 8. Add the cache-control headers.
 
 
-Why do you think different cache times for the nginx cache and for the browser were defined?
-
-
-You can have 2 different levels of caching. In this case we are working with the browser cache and the server cache.
