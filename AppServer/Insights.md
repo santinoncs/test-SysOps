@@ -5,14 +5,19 @@ Steps:
 3. clone the repo from github into /opt/test via https
 4. chown the contents with the user www-data used.
 5. Add a file called default with the server nginx data.
-5. Enable gzip
+6. Set the proxy pass in order to proxy all the cgi-bin content via nginx
+7. Enable gzip via 
+
+
+```gzip_proxied any;```
+
+Testing...
 
 ```
 curl -H "Accept-Encoding: gzip"  http://localhost/cgi-bin/test.cgi -Ivvv
 ```
 
-6. Set the proxy pass in order to proxy all the cgi-bin content via nginx
-7. Add the cache for the proxied data to 1m
+8. Add the cache for the proxied data to 1m
 
 ```
 root@ip-172-31-34-50:/opt# date; curl -X GET http://localhost/cgi-bin/test.cgi
@@ -30,7 +35,7 @@ Thu Mar 29 14:12:49 UTC 2018
 root@ip-172-31-34-50:/opt# 
 ```
 
-8. Add the cache-control headers.
+9. Add the cache-control headers.
 
 ```
 root@ip-172-31-34-50:~# curl -X GET http://localhost/index.html -I
