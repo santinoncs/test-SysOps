@@ -15,19 +15,19 @@ curl -H "Accept-Encoding: gzip"  http://localhost/cgi-bin/test.cgi -Ivvv
 7. Add the cache for the proxied data to 1m
 
 ```
-root@ip-172-31-40-120:~# date; curl -X GET http://localhost/cgi-bin/test.cgi
-Tue Mar 27 18:33:14 UTC 2018
-2018-03-27 18:32:52.867050
-2018-03-27 18:32:54.869198
-root@ip-172-31-40-120:~# date; curl -X GET http://localhost/cgi-bin/test.cgi
-Tue Mar 27 18:33:15 UTC 2018
-2018-03-27 18:32:52.867050
-2018-03-27 18:32:54.869198
-root@ip-172-31-40-120:~# date; curl -X GET http://localhost/cgi-bin/test.cgi
-Tue Mar 27 18:33:56 UTC 2018
-2018-03-27 18:33:56.140171
-2018-03-27 18:33:58.142291
-root@ip-172-31-40-120:~# 
+root@ip-172-31-34-50:/opt# date; curl -X GET http://localhost/cgi-bin/test.cgi
+Thu Mar 29 14:11:15 UTC 2018
+2018-03-29 14:11:10.660453
+2018-03-29 14:11:12.662600
+root@ip-172-31-34-50:/opt# date; curl -X GET http://localhost/cgi-bin/test.cgi
+Thu Mar 29 14:11:34 UTC 2018
+2018-03-29 14:11:10.660453
+2018-03-29 14:11:12.662600
+root@ip-172-31-34-50:/opt# date; curl -X GET http://localhost/cgi-bin/test.cgi
+Thu Mar 29 14:12:49 UTC 2018
+2018-03-29 14:12:49.526692
+2018-03-29 14:12:51.528817
+root@ip-172-31-34-50:/opt# 
 ```
 
 8. Add the cache-control headers.
