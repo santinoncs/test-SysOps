@@ -19,6 +19,7 @@ of each of the servers to get to them.
 
 
 Autoscaling group : Appserver_ASG
+
 Launch configuration: Appserver_LC
 
 You need to link the Autoscaling group with a launch configuration, that is, a sort of an instance template when you
