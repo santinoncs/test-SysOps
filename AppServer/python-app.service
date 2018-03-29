@@ -1,0 +1,13 @@
+[Unit]
+Description=Python App service
+Before=nginx.service
+
+[Service]
+Type=Simple
+ExecStart=/usr/bin/python3 -m http.server --cgi 8080
+WorkingDirectory=/opt/test
+User=www-data
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

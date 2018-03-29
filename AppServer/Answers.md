@@ -32,4 +32,33 @@ root@ip-172-31-40-120:~#
 
 8. Add the cache-control headers.
 
+```
+root@ip-172-31-34-50:~# curl -X GET http://localhost/index.html -I
+HTTP/1.1 200 OK
+Server: nginx
+Date: Thu, 29 Mar 2018 14:30:10 GMT
+Content-Type: text/html
+Content-Length: 114
+Last-Modified: Thu, 29 Mar 2018 13:27:55 GMT
+Connection: keep-alive
+Vary: Accept-Encoding
+ETag: "5abce9db-72"
+Expires: Thu, 29 Mar 2018 15:30:10 GMT
+Cache-Control: max-age=3600
+Cache-Control: public
+Accept-Ranges: bytes
 
+root@ip-172-31-34-50:~# curl -X GET http://localhost/cgi-bin/test.cgi -I
+HTTP/1.1 200 Script output follows
+Server: nginx
+Date: Thu, 29 Mar 2018 14:30:14 GMT
+Content-Type: text/html
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: Accept-Encoding
+Expires: Thu, 29 Mar 2018 14:40:14 GMT
+Cache-Control: max-age=600
+Cache-Control: public
+
+root@ip-172-31-34-50:~# 
+```
