@@ -37,3 +37,10 @@ ST-A138-36LFVH8:MarFeel santiago.nunezcacho$
 
 Because the http connection to the nginxs is now comming from a haproxy, we can remove the public IPs or
 allow the connections to the http only from the private haproxy IP.
+I called this security group
+
+```
+appserver-enhance-security
+```
+
+but I didnt modify anything, so I left the less-secure environment.
