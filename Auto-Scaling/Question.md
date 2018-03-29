@@ -1,7 +1,11 @@
-Steps:
+**Which is the AMI id of your instance?**
 
-1. First create an ami from the instance.  ( Removing the /opt/test first )
-2. Launch an instance from this ami and set the user-data necessary to clone the repo
+```
+ami-f27f2d8b
+```
+
+
+**Which code have you added to the user-data on launching the instance?**
 
 
 ```
