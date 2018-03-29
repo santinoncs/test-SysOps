@@ -1,7 +1,5 @@
 #!/bin/bash
 
-
-
 function valid_ip()
 {
     local  ip=$1
@@ -21,16 +19,18 @@ function valid_ip()
 
 
 region="eu-west-1"
-auto_scaling_group="AppserverASG"
+auto_scaling_group="Appserver_ASG"
 
 
 cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.cur
 cp  /etc/haproxy/haproxy.cfg.template /etc/haproxy/haproxy.cfg
 
 
-    for i in `aws autoscaling describe-auto-scaling-groups --auto-scaling-group-name ${auto_scaling_group} | grep -i instanceid  | awk '{ print $2}' | cu
-t -d',' -f1| sed -e 's/"//g'`
+    var=0
+
+    for i in `aws autoscaling describe-auto-scaling-groups --auto-scaling-group-name ${auto_scaling_group} | grep -i instanceid  | awk '{ print $2}' | cut -d',' -f1| sed -e 's/"//g'`
     do
+        var=$((var+1))
         ip=$(aws ec2 describe-instances --instance-ids $i | grep -i PrivateIpAddress | awk '{ print $2 }' | head -1 | cut -d"," -f1 |tr -d '"')
 
         if valid_ip $ip
@@ -44,7 +44,7 @@ t -d',' -f1| sed -e 's/"//g'`
 
         tabs 8
 
-        echo -e "\tserver server1 ${ip}:80 maxconn 32 check" >> /etc/haproxy/haproxy.cfg
+        echo -e "\tserver server${var} ${ip}:80 maxconn 32 check" >> /etc/haproxy/haproxy.cfg
 
     done;
 

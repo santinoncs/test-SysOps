@@ -1,0 +1,19 @@
+HAProxy Version: 1.6.3  (released: 2015/12/25)        PID: 5337 (proc 1)
+
+         Node: ip-172-31-35-81 (uptime 0d 0h11m24s)
+
+        Pipes: [                                                       0/0]
+  Connections: [                                                    0/2000]
+
+  Procs:   1   Tasks:     7    Queue:     1    Proxies:   2   Services:    4
+
+NAME                        W STATUS        CHECK                 ACT        BCK        QCUR        QMAX         SCUR         SMAX         SLIM         STOT
+
+>>> localnodes                                                                                                                                              
+FRONTEND                    0 OPEN                                  0          0           0           0            0            3         2000           18
+
+>>> autoscaling_group
+server1                     1 UP            L7OK                    1          0           0           0            0            1           32           26
+server2                     1 UP            L7OK                    1          0           0           0            0            1           32            1
+BACKEND                     2 UP                                    2          0           0           0            0            1          200           27
+
