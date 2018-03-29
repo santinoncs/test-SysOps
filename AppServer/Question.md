@@ -1,5 +1,6 @@
 **Why do you think different cache times for the nginx cache and for the browser were defined?**
 
+There are different levels of cache. Browser cache helps improve performance by letting browser to cache elements that not change frequently. For example a company logos image. Server or proxy cache are a way to cache elements and respond with the same results to every query and user.
 
 Browser cache is for individual users. 
 Reverse proxy cache is unique.
